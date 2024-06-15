@@ -19,12 +19,12 @@ const verifyProduct = (product) => {
 };
 
 describe("productList class", () => {
-   it("should be able to create a product successfully", () => {
+   it("should be able to create a product sucessfully", () => {
       const newProduct = productList.createProduct(productData);
       verifyProduct(newProduct);
    });
 
-   it("should be able to get product list successfully", () => {
+   it("should be able to get product list sucessfully", () => {
       const products = productList.getProducts();
       expect(products).toHaveLength(1);
       verifyProduct(products[0]);
@@ -36,7 +36,7 @@ describe("productList class", () => {
       verifyProduct(product);
    });
 
-   it("should be able to update product successfully", () => {
+   it("should be able to update product sucessfully", () => {
       const date = new Date();
       const year = date.getFullYear();
 
@@ -53,11 +53,11 @@ describe("productList class", () => {
       expect(String(updatedProduct.updatedAt)).toContain(year);
    });
 
-   it("should be able to delete product successfully", () => {
+   it("should be able to delete product sucessfully", () => {
       const deleteProduct = productList.deleteProduct(1);
 
       expect(deleteProduct).toBeTypeOf("object");
-      expect(deleteProduct.message).toBe("Product successfully deleted.");
+      expect(deleteProduct.message).toBe("Product sucessfully deleted.");
 
       const products = productList.getProducts();
       expect(products).toHaveLength(0);
